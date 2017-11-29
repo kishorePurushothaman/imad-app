@@ -5,8 +5,8 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-
-var articalOne = {
+var articals={
+ 'artical-one' : {
       title:'artical-one|kishore',
       heading:'artical one',
       date:'15 dec 1996',
@@ -18,10 +18,10 @@ This lists similar commands between Windows and Unix command lines.
 To get help on a Windows command, use the /? option, for example date /?.</p>
 <p>Date on Unix prints the current date and time. Date and time on Windows print the date and time respectively, and prompt for a new date or time.
 del	rm	</p>`
-};
+},
 
 
-var articalTwo ={
+ 'artical-two' :{
      title:'artical-two|lp',
       heading:'artical two',
       date:'09 apr 1997',
@@ -33,9 +33,9 @@ This lists similar commands between Windows and Unix command lines.
 To get help on a Windows command, use the /? option, for example date /?.</p>
 <p>Date on Unix prints the current date and time. Date and time on Windows print the date and time respectively, and prompt for a new date or time.
 del	rm	</p>`
-};
+},
 
-var articalThree ={
+ 'artical-three' :{
      title:'artical-one|web',
       heading:'artical three',
       date:'23 nov 1994',
@@ -47,11 +47,11 @@ This lists similar commands between Windows and Unix command lines.
 To get help on a Windows command, use the /? option, for example date /?.</p>
 <p>Date on Unix prints the current date and time. Date and time on Windows print the date and time respectively, and prompt for a new date or time.
 del	rm	</p>`
+}
+
+
+
 };
-
-
-
-
 
 function createTemplate(data){
 
