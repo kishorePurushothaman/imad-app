@@ -106,13 +106,13 @@ app.get('/', function (req, res) {
 
 
 app.get('/artical-one',function(req,res){
-     res.send(creatTemplate(articalOne));
+     res.send(createTemplate(articalOne));
 });
 app.get('/artical-two',function(req,res){
-   res.send(creatTemplate(articalTwo));
+   res.send(createTemplate(articalTwo));
 });
 app.get('/artical-three',function(req,res){
-   res.send(creatTemplate(articalThree));
+   res.send(createTemplate(articalThree));
 });
 
 
