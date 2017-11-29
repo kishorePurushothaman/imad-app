@@ -5,19 +5,118 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
+
+var articalOne = {
+      title:'artical-one|kishore',
+      heading:'artical one',
+      date:'15 dec 1996',
+      content: `<p>this is my first para</p>
+            <p> This page was created on Sat Oct 09 2010 and last changed on Thu Nov 16 2017.
+
+This lists similar commands between Windows and Unix command lines.
+
+To get help on a Windows command, use the /? option, for example date /?.</p>
+<p>Date on Unix prints the current date and time. Date and time on Windows print the date and time respectively, and prompt for a new date or time.
+del	rm	</p>`
+};
+
+
+var articalTwo ={
+     title:'artical-two|lp',
+      heading:'artical two',
+      date:'09 apr 1997',
+      content: `<p>this is my first para</p>
+            <p> This page was created on Sat Oct 09 2010 and last changed on Thu Nov 16 2017.
+
+This lists similar commands between Windows and Unix command lines.
+
+To get help on a Windows command, use the /? option, for example date /?.</p>
+<p>Date on Unix prints the current date and time. Date and time on Windows print the date and time respectively, and prompt for a new date or time.
+del	rm	</p>`
+};
+
+var articalThree ={
+     title:'artical-one|web',
+      heading:'artical three',
+      date:'23 nov 1994',
+      content: `<p>this is my first para</p>
+            <p> This page was created on Sat Oct 09 2010 and last changed on Thu Nov 16 2017.
+
+This lists similar commands between Windows and Unix command lines.
+
+To get help on a Windows command, use the /? option, for example date /?.</p>
+<p>Date on Unix prints the current date and time. Date and time on Windows print the date and time respectively, and prompt for a new date or time.
+del	rm	</p>`
+};
+
+
+
+
+
+function createTemplate(data){
+
+var title=data.title;
+var heading=data.heading;
+var date=data.date;
+var content=data.content;
+var htmlTemplate=`
+    
+    <html>
+  <head>
+      <title>
+         ${title}
+      </title> 
+       <link href="/ui/style.css" rel="stylesheet" />
+  </head>
+       <body>
+           <div class="container">
+           
+           <div>
+            <a  href="/">home</a>
+            </div>
+            <hr/>
+        <h3>
+           ${heading}
+        </h3>
+        <div>
+           ${date}
+        </div>
+        <div>
+            ${content}
+        </div>
+            </div>    
+       </body>      
+           
+  </html>         
+           
+ `;  
+ return htmlTemplate;
+}
+           
+           
+
+
+
+
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
+
+
+
 app.get('/artical-one',function(req,res){
-     res.sendFile(path.join(__dirname, 'ui', 'artical-one.html'));
+     res.send(creatTemplate(articalOne));
 });
 app.get('/artical-two',function(req,res){
-   res.sendFile(path.join(__dirname, 'ui', 'artical-two.html'));
+   res.send(creatTemplate(articalTwo));
 });
 app.get('/artical-three',function(req,res){
-   res.sendFile(path.join(__dirname, 'ui', 'artical-three.html')); 
+   res.send(creatTemplate(articalThree));
 });
+
+
+
 
 
 app.get('/ui/style.css', function (req, res) {
