@@ -105,15 +105,11 @@ app.get('/', function (req, res) {
 
 
 
-app.get('/artical-one',function(req,res){
-     res.send(createTemplate(articalOne));
+app.get('/:articalname',function(req,res){
+     var articalename=req.prams.articalname;
+     res.send(createTemplate(articals[articalname]));
 });
-app.get('/artical-two',function(req,res){
-   res.send(createTemplate(articalTwo));
-});
-app.get('/artical-three',function(req,res){
-   res.send(createTemplate(articalThree));
-});
+
 
 
 
