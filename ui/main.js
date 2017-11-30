@@ -6,5 +6,5 @@ element.innerHTML='new value';
 
 var img=document.getElementById('kish');
 img.onclick = function() {
-    img.style.marginleft='100px';
+    img.style.marginleft='200px';
 };
